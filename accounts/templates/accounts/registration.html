@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Design by foolishdeveloper.com -->
+        <title>Signup Page</title>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+        <!--Stylesheet-->
+        <style media="screen"></style>
+    </head>
+    <body>
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <form action="" method="post">
+            {% csrf_token %} 
+            {% for field in form %}
+                {% if field.error %}
+                {{ filed }}
+                {% endif %}
+            {% endfor %}
+        <h3>Register</h3>
+
+        <label for="username">Username</label>
+        {{ form.username }}
+        <!-- <input type="text" placeholder="Username" name="username" id="username"> -->
+
+        <label for="email">Email</label>
+        {{ form.email }}
+
+        <label for="password1">Password</label>
+        {{ form.password1 }}
+
+
+        <label for="password2">Confrom Password</label>
+        {{ form.password2 }}
+        <button type="submit">Signup</button>
+        <a>i have already account</a>
+    </form>
+</body>
+</html>
